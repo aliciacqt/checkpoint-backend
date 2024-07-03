@@ -5,7 +5,7 @@ import {
   Column,
 } from "typeorm";
 import { Length } from "class-validator";
-import { ObjectType, Field, Int, InputType } from "type-graphql";
+import { ObjectType, Field, Int } from "type-graphql";
 
 @Entity()
 @ObjectType()
@@ -14,8 +14,9 @@ export default class Country extends BaseEntity {
   @Field(() => Int)
   id: number;
 
-  @Column({ Length: 2 })
+  @Column()
   @Field()
+  @Length(2)
   code: string;
 
   @Column()

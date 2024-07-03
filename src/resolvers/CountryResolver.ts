@@ -2,12 +2,9 @@ import { Resolver, Query } from "type-graphql";
 import Country from "../entities/Country";
 
 @Resolver(Country)
-class CountriesResolver {
+export default class CountriesResolver {
   @Query(() => [Country])
-  async ads(
-  ) {
-    return Country.find();
+  async countries() {
+    return await Country.find();
   }
 }
-
-export default CountriesResolver;

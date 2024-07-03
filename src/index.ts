@@ -14,7 +14,7 @@ buildSchema({ resolvers: [CountriesResolver] }).then((schema) => {
   });
 });
 
-const db = new sqlite.Database("checkpoint-backend.sqlite");
+const db = new sqlite.Database("./checkpoint-backend-db.sqlite");
 
 const app = express();
 const port = 4000;

@@ -1,8 +1,12 @@
 import { DataSource } from "typeorm";
+import env from "./env";
+import Country from "./entities/Country";
 
-export default new DataSource({
+const AppDataSource = new DataSource({
   type: 'sqlite',
-  database: 'checkpoint-backend.sqlite',
-  entities: ['src/entities/*.ts'],
+  database: env.DB_NAME,
+  entities: [Country],
   synchronize: true,
 });
+
+export default AppDataSource;
